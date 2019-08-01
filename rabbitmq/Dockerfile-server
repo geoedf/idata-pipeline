@@ -1,8 +1,0 @@
-FROM rabbitmq:3.7.8-management-alpine
-
-# File Author / Maintainer
-MAINTAINER Rajesh Kalyanam "rkalyana@purdue.edu"
-
-ADD rabbitmq.config /etc/rabbitmq/
-ADD definitions.json /etc/rabbitmq/
-

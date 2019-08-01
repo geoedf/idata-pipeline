@@ -1,0 +1,30 @@
+version: '3'
+services:
+    rabbitmq-server:
+        image: rkalyana/geoedf-rmqserver
+        ports:
+          - "5672:5672"
+    rabbitmq-default-worker:
+        build:
+          context: .
+          dockerfile: Dockerfile-all
+        depends_on:
+          - rabbitmq-server
+        deploy:
+            replicas: 2
+    rabbitmq-raster-worker:
+        build:
+          context: .
+          dockerfile: Dockerfile-raster
+        depends_on:
+          - rabbitmq-server
+        deploy:
+            replicas: 2
+    rabbitmq-vector-worker:
+        build:
+          context: .
+          dockerfile: Dockerfile-vector
+        depends_on:
+          - rabbitmq-server
+        deploy:
+            replicas: 2

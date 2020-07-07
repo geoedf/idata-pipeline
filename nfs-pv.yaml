@@ -4,8 +4,9 @@ metadata:
   name: nfs-pv
 spec:
   capacity:
-    storage: 8Gi
+    storage: 16Gi
   accessModes:
     - ReadWriteMany
   nfs:
-    pdName: nfs
+    server: 149.165.171.191
+    path: /vol_b/nfs

@@ -4,13 +4,13 @@ metadata:
         name: rabbitmq-pv
 spec:
         capacity:
-                storage: 8Gi
+                storage: 16Gi
         accessModes:
         - ReadWriteOnce
         - ReadOnlyMany
         persistentVolumeReclaimPolicy: Retain
         #storageClassName: manual
         nfs:
-                server: 129.114.17.192
+                server: 149.165.171.191
                 path: "/vol_b/nfs"
 

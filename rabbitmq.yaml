@@ -48,5 +48,6 @@ rabbitmq:
     secretName: load-definition
   extraConfiguration: |
     management.load_definitions = /app/load_definition.json
-    persistence.existingClaim = rabbitmq-pvc
-    volumePermissions.enabled = true
+    #persistence.existingClaim = rabbitmq-pvc
+    #persistence.enabled = false
+    #volumePermissions.enabled = true

@@ -8,5 +8,5 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: 149.165.171.191
+    server: 149.165.156.106
     path: /vol_b/nfs

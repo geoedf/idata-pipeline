@@ -1,0 +1,11 @@
+# Default values for idata-pipeline.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  hostname: www.pipeline.geoedf.org
+  idata_path: /srv/idata
+  persistence_path: /data
+  solr_url: "https://hub/solr/core"
+  rabbitmq_username: rabbitmq
+  rabbitmq_password: CHANGEME

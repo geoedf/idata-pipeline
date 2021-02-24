@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-deployment
+  labels:
+    app: geoedf
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: geoedf
+  template:
+    metadata:
+      labels:
+        app: geoedf
+    spec:
+      containers:
+        - name: idata-worker
+          image: geoedf/idata-worker
+          command: ["/app/entrypoint.sh"]
+          env:
+            - name: RMQ_HOST
+              value: {{ printf "%s-%s" .Release.Name "rabbitmq" }}
+            - name: RMQ_USER
+              value: {{ .Values.global.rabbitmq_username | quote }}
+            - name: RMQ_PASS
+              value: {{ .Values.global.rabbitmq_password | quote }}
+            - name: RMQ_EXCHANGE
+              value: "geoedf-all"
+            - name: RMQ_QUEUE
+              value: "geoedf-all"
+            - name: SOLR_URL
+              value: {{ .Values.global.solr_url }}
+            - name: QGIS_SERVER
+              value: {{ printf "%s/qgis/" .Values.global.hostname }}
+          volumeMounts:
+            - mountPath: /srv/idata
+              name: idata
+      volumes:
+        - name: idata
+          persistentVolumeClaim:
+            claimName: idata-pv-claim

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /qgis-server/$1
+  name: qgis-ingress
+spec:
+  tls:
+    - hosts:
+      - {{ .Values.global.hostname }}
+      secretName: geoedf-pipeline-tls
+  rules:
+    - host: {{ .Values.global.hostname }}
+      http:
+        paths:
+          - backend:
+              service:
+                name: qgis-nginx
+                port:
+                 number: 80
+            path: /qgis/(.*)
+            pathType: ImplementationSpecific

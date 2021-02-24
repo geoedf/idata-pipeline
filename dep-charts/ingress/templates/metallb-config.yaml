@@ -1,0 +1,15 @@
+# configure the fixed IP ranges for metallb to use when assigning LB addresses
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 10.0.0.12/32
+      - 10.0.0.30/32

@@ -1,0 +1,23 @@
+# Default values for rmq.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+#
+
+management_prefix: /rabbitmq/
+
+# override values for bitnami/rabbitmq dependency
+rabbitmq:
+  replicaCount: 2
+  persistence:
+    accessMode: ReadWriteMany
+    enabled: true
+    existingClaim: rabbitmq-pv-claim
+    size: 5Gi 
+  volumePermissions:
+    enabled: true 
+  loadDefinition:
+    enabled: true
+    existingSecret: rabbitmq-load-definition
+  extraConfiguration: |-
+    management.path_prefix = /rabbitmq/
+    load_definitions = /app/load_definition.json

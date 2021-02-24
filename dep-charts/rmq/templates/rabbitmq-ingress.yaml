@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: rabbitmq-ingress
+spec:
+  tls:
+    - hosts:
+      - {{ .Values.global.hostname }}
+      secretName: geoedf-pipeline-tls
+  rules:
+    - host: {{ .Values.global.hostname }}
+      http:
+        paths:
+          - backend:
+              service:
+                name: {{ .Release.Name }}-rabbitmq
+                port:
+                  number: 15672
+            path: {{ .Values.management_prefix }}
+            pathType: ImplementationSpecific

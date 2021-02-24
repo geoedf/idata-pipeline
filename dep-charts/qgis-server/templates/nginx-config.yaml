@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: qgis-nginx-config
+data:
+  nginx: |- 
+    {{- $hostname := .Values.global.hostname }}
+    {{- range $line := .Files.Lines "nginx.conf" }}
+    {{ $line | replace "pipeline-hostname"  (printf "%s" $hostname) }}
+    {{- end }}

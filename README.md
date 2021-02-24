@@ -1,8 +1,5 @@
-# idata-pipeline
-Config and containers for iData managed filesystem change detection and notification
+# iData Pipeline Deployment
+Helm chart for deploying the iData filesystem event processing pipeline and externally accessible services.
 
-File Locations (ec2-dev)
-- logstash.conf   : /etc/logstash/conf.d/
-- auditbeat.yml   : /etc/auditbeat/
-- definitions.json: /etc/rabbitmq/
-- rabbitmq.config : /etc/rabbitmq/
+For instructions on deploying this pipeline in OpenStack, refer to the docs.
+

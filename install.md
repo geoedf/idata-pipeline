@@ -1,7 +1,3 @@
-layout: page
-title: "Installation Instructions"
-permalink: /install/
-
 # File Pipeline Setup
 
 Broadly, this involves three steps: first set up a cluster of nodes on OpenStack, then set up a Kubernetes cluster on those nodes, and finally install the pipeline Helm chart.

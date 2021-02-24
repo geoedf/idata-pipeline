@@ -159,3 +159,15 @@ Install the Helm chart as usual: `helm install geoedf .`
 **Note: the /data/rabbitmq/ directory in the worker nodes may need to be emptied out when attempting a reinstall of the chart. It is not yet clear if this is always required or only in certain error conditions.**
 
 ---- this completes the Helm chart install
+
+## Upgrades
+
+If you need to make fixes to the worker or upgrade to a new version of the worker, you can use Helm upgrade to easily deploy a new version of the worker.
+The _values.yaml_ file helpfully provides a way to set the tag for the version of the worker Docker image you would like to run; simply update this and then run `helm upgrade geoedf .` (assuming _geoedf_ is the name of the release).
+
+**Note: RabbitMQ will complain if you simply run the above command; instead you need to provide values for the password and erlang-cookie as follows**
+
+Run `kubectl get secret geoedf-rabbitmq -o jsonpath="{.data.rabbitmq-password}" | base64 --decode` and `kubectl get secret geoedf-rabbitmq -o jsonpath="{.data.erlang-cookie}" | base64 --decode` to get these respective values and then 
+upgrade using `helm upgrade geoedf --set rmq.rabbitmq.auth.erlangCookie=VALUE --set rmq.rabbitmq.auth.password=VALUE .`
+
+

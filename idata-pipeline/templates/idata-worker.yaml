@@ -5,7 +5,7 @@ metadata:
   labels:
     app: geoedf
 spec:
-  replicas: 2
+  replicas: {{ default 1 .Values.worker.replicas }}
   selector:
     matchLabels:
       app: geoedf
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: idata-worker
-          image: geoedf/idata-worker
+          image: {{ .Values.worker.image }}:{{ default "latest" .Values.worker.tag }}
           command: ["/app/entrypoint.sh"]
           env:
             - name: RMQ_HOST

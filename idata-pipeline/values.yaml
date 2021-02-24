@@ -6,6 +6,10 @@ global:
   hostname: www.pipeline.geoedf.org
   idata_path: /srv/idata
   persistence_path: /data
-  solr_url: "https://hub/solr/core"
+  solr_url: "hub:port/solr/core"
   rabbitmq_username: rabbitmq
   rabbitmq_password: CHANGEME
+worker:
+ image: geoedf/idata-worker
+ tag: 0.1.1
+ replicas: 2

@@ -18,7 +18,7 @@ metadata:
   name: tcp-services
   namespace: ingress-nginx
 data:
-  5672: "default/rabbitmq:5672"
+        5672: {{ printf "default/%s-rabbitmq:5672" .Release.Name }} 
 ---
 # Source: ingress-nginx/templates/controller-configmap.yaml
 apiVersion: v1

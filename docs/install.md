@@ -129,7 +129,10 @@ We will be using HTTPS to access services such as the RabbitMQ management consol
 #### Certificate generation
 Follow instructions at [https://certbot.eff.org/](https://certbot.eff.org/) to set up a certificate for your chosen domain (in our case, this is _www.pipeline.geoedf.org_). 
 
-**Note: you need to have nginx running (temporarily) wherever you set this up. Our suggestion is to use the Kubernetes master node**
+**Note:** 
+
+1. You need to have nginx running (temporarily) wherever you set this up. Our suggestion is to use the Kubernetes master node.
+2. The resulting certificate chain and key in PEM format need to be base64 encoded before pasting into the Kubernetes TLS secret (_geoedf-pipeline-tls_).
 
 #### DNS records
 We will use _www.pipeline.geoedf.org_ as the domain name for accessing the external services. We need to add DNS records (for e.g., in domains.google) to bind the **free** floating IPs to this domain. 

@@ -127,6 +127,8 @@ Follow instructions at [https://certbot.eff.org/](https://certbot.eff.org/) to s
 
 **Note: you need to have nginx running (temporarily) wherever you set this up. Our suggestion is to use the Kubernetes master node**
 
+certbot certonly --nginx -d "$DOMAIN" -d "www.$DOMAIN" --email "$EMAIL" --agree-tos --redirect
+
 #### DNS records
 We will use _www.pipeline.geoedf.org_ as the domain name for accessing the external services. We need to add DNS records (for e.g., in domains.google) to bind the **free** floating IPs to this domain. 
 

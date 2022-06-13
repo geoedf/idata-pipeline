@@ -6,7 +6,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: ingress-nginx
@@ -28,7 +28,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: ingress-nginx-controller
@@ -43,7 +43,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
   name: ingress-nginx
 rules:
@@ -113,7 +113,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
   name: ingress-nginx
 roleRef:
@@ -133,7 +133,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: ingress-nginx
@@ -194,7 +194,7 @@ rules:
     resources:
       - configmaps
     resourceNames:
-      - ingress-controller-leader-nginx
+      - ingress-controller-leader
     verbs:
       - get
       - update
@@ -228,7 +228,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: ingress-nginx
@@ -250,7 +250,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: ingress-nginx-controller-admission
@@ -275,7 +275,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: ingress-nginx-controller
@@ -308,7 +308,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: controller
   name: ingress-nginx-controller
@@ -331,7 +331,7 @@ spec:
       dnsPolicy: ClusterFirst
       containers:
         - name: controller
-          image: k8s.gcr.io/ingress-nginx/controller:v0.43.0@sha256:9bba603b99bf25f6d117cf1235b6598c16033ad027b143c90fa5b3cc583c5713
+          image: k8s.gcr.io/ingress-nginx/controller:v1.1.1
           imagePullPolicy: IfNotPresent
           lifecycle:
             preStop:
@@ -426,7 +426,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
   name: ingress-nginx-admission
@@ -466,7 +466,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
   namespace: ingress-nginx
@@ -483,7 +483,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
 rules:
@@ -507,7 +507,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
 roleRef:
@@ -531,7 +531,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
   namespace: ingress-nginx
@@ -556,7 +556,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
   namespace: ingress-nginx
@@ -581,7 +581,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
   namespace: ingress-nginx
@@ -593,7 +593,7 @@ spec:
         helm.sh/chart: ingress-nginx-3.19.0
         app.kubernetes.io/name: ingress-nginx
         app.kubernetes.io/instance: ingress-nginx
-        app.kubernetes.io/version: 0.43.0
+        app.kubernetes.io/version: 1.1.1
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: admission-webhook
     spec:
@@ -629,7 +629,7 @@ metadata:
     helm.sh/chart: ingress-nginx-3.19.0
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/version: 0.43.0
+    app.kubernetes.io/version: 1.1.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: admission-webhook
   namespace: ingress-nginx
@@ -641,7 +641,7 @@ spec:
         helm.sh/chart: ingress-nginx-3.19.0
         app.kubernetes.io/name: ingress-nginx
         app.kubernetes.io/instance: ingress-nginx
-        app.kubernetes.io/version: 0.43.0
+        app.kubernetes.io/version: 1.1.1
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: admission-webhook
     spec:

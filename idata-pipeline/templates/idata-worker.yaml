@@ -33,6 +33,10 @@ spec:
               value: {{ .Values.global.solr_url }}
             - name: QGIS_SERVER
               value: {{ printf "%s/qgis/" .Values.global.hostname }}
+            - name: QT_QPA_PLATFORM
+              value: 'offscreen'
+            - name: OSLO_LOCK_PATH
+              value: '/srv/idata/workerfiles/previewlocks'  
           volumeMounts:
             - mountPath: /srv/idata
               name: idata
